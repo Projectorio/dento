@@ -1,13 +1,13 @@
 {
   "keyword": "The keyword to explain",
-  "explanation": "the up to 1000 word explanation of the given keyword",
+  "explanation": "the up to 1000 word explanation of the given keyword with additional information relevant for orthodontics, e.g. position relative to key attributes of a jaw",
   "disclaimer": "disclaimer about correctness with with a link to official sources",
   "example": "an example for the given keyword with a fake patient",
   "furtherReading": [
     {
       "keyword": "the keyword",
       "description": "short description of the topic",
-      "link": "hyperlink to the kubernetes docs if possible"
+      "link": "working hyperlink to articles, if possible"
     }
   ]
 }

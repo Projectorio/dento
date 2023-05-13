@@ -4,8 +4,7 @@ type ExplainResponse struct {
 	Keyword        string           `json:"keyword"`
 	Explanation    string           `json:"explanation"`
 	Disclaimer     string           `json:"disclaimer"`
-	ExampleYaml    string           `json:"exampleYaml"`
-	ExampleJson    string           `json:"exampleJson"`
+	Example        string           `json:"example"`
 	FurtherReading []FurtherReading `json:"furtherReading"`
 }
 

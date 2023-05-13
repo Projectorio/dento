@@ -1,4 +1,4 @@
-module github.com/mattagohni/dento
+module github.com/Projectorio/dento
 
 go 1.20
 
@@ -20,7 +20,6 @@ require (
 	github.com/google/gofuzz v1.1.0 // indirect
 	github.com/inconshreveable/mousetrap v1.1.0 // indirect
 	github.com/json-iterator/go v1.1.12 // indirect
-	github.com/mattagohni/dento v0.0.0-20230506103815-041a25e31816 // indirect
 	github.com/mattn/go-colorable v0.1.13 // indirect
 	github.com/mattn/go-isatty v0.0.17 // indirect
 	github.com/modern-go/concurrent v0.0.0-20180306012644-bacd9c7ef1dd // indirect

@@ -1,5 +1,5 @@
 /*
-Copyright © 2023 Matthias Alt <mattagohni@gmail.com>
+Copyright © 2023 Matthias Alt <Projectorio@gmail.com>
 */
 package cmd
 
@@ -7,9 +7,9 @@ import (
 	"context"
 	"encoding/json"
 	"fmt"
+	. "github.com/Projectorio/dento/internal/response"
 	"github.com/fatih/color"
 	goopenai "github.com/franciscoescher/goopenai"
-	. "github.com/mattagohni/dento/internal/response"
 	"github.com/spf13/cobra"
 	"io"
 	"log"
@@ -54,7 +54,8 @@ func NewExplainCommand(sendExplainRequest func(ctx context.Context, req goopenai
 			message := goopenai.Message{
 				Role: "user",
 				Content: fmt.Sprintf(
-					"explain %s in context of orthodontics. in your response make a new line every 80"+
+					"explain %s to an assitant doctor of orthontics in german language. If possible give relvant information about position relative to other key points in a jaw."+
+						" In your response make a new line every 80"+
 						" charecters. also structure your response in a json with the following format "+
 						string(responseFormat), givenSearchTerm),
 			}
@@ -62,7 +63,7 @@ func NewExplainCommand(sendExplainRequest func(ctx context.Context, req goopenai
 			r := goopenai.CreateCompletionsRequest{
 				Model:       "gpt-3.5-turbo",
 				Messages:    messages,
-				Temperature: 0.2,
+				Temperature: 0.7,
 			}
 
 			completions, err := sendExplainRequest(context.Background(), r)
@@ -82,10 +83,9 @@ func NewExplainCommand(sendExplainRequest func(ctx context.Context, req goopenai
 				furtherReadings = append(furtherReadings, color.WhiteString(reading.Keyword+"\n"+reading.Description+"\n"+reading.Link))
 			}
 
-			yamlExample := explainResponse.ExampleYaml
-			jsonExample := explainResponse.ExampleJson
+			example := explainResponse.Example
 
-			output := createOutput(keyword, explanation, disclaimer, yamlExample, jsonExample, furtherReadings)
+			output := createOutput(keyword, explanation, disclaimer, example, furtherReadings)
 			printOutput(cmd.OutOrStdout(), output)
 		},
 	}
@@ -102,8 +102,8 @@ func printOutput(writer io.Writer, output []string) {
 	}
 }
 
-func createOutput(keyword string, explanation string, disclaimer string, yamlExample string, jsonExample string, furtherReadings []string) []string {
-	output := []string{keyword, explanation, disclaimer, yamlExample, jsonExample}
+func createOutput(keyword string, explanation string, disclaimer string, example string, furtherReadings []string) []string {
+	output := []string{keyword, explanation, disclaimer, example}
 
 	for _, reading := range furtherReadings {
 		output = append(output, reading)

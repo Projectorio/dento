@@ -6,8 +6,8 @@ package cmd
 import (
 	"context"
 	"fmt"
+	"github.com/Projectorio/dento/internal"
 	"github.com/franciscoescher/goopenai"
-	"github.com/mattagohni/dento/internal"
 	v1 "k8s.io/api/apps/v1"
 	"log"
 	"os"
