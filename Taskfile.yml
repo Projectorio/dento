@@ -4,7 +4,7 @@ tasks:
   build:
     desc: Build the app
     cmds:
-      - GOFLAGS=-mod=mod go build -o bin/kbuddy main.go
+      - GOFLAGS=-mod=mod go build -o bin/dento main.go
 
   run:
     desc: Run the app

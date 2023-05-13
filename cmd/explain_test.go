@@ -5,7 +5,7 @@ import (
 	"context"
 	"fmt"
 	"github.com/franciscoescher/goopenai"
-	"github.com/mattagohni/kbuddy/cmd/mocks"
+	"github.com/mattagohni/dento/cmd/mocks"
 	"github.com/spf13/cobra"
 	"github.com/stretchr/testify/assert"
 	"net/http"

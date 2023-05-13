@@ -9,7 +9,7 @@ import (
 	"fmt"
 	"github.com/fatih/color"
 	goopenai "github.com/franciscoescher/goopenai"
-	. "github.com/mattagohni/kbuddy/internal/response"
+	. "github.com/mattagohni/dento/internal/response"
 	"github.com/spf13/cobra"
 	"io"
 	"log"
@@ -34,8 +34,8 @@ func init() {
 func NewExplainCommand(sendExplainRequest func(ctx context.Context, req goopenai.CreateCompletionsRequest) (goopenai.CreateCompletionsResponse, error)) *cobra.Command {
 	var explainCmd = &cobra.Command{
 		Use:   "explain",
-		Short: "Will explain given topic related to kubernetes using ChatGPT",
-		Long:  `given keyword e.g. (Deployment) will be explained using ChatGPT`,
+		Short: "Will explain given topic related to orthodontics",
+		Long:  `given keyword e.g. (Tooth) will be explained using ChatGPT`,
 		Run: func(cmd *cobra.Command, args []string) {
 			color.Set(color.FgHiBlue)
 			var messages []goopenai.Message
@@ -54,7 +54,7 @@ func NewExplainCommand(sendExplainRequest func(ctx context.Context, req goopenai
 			message := goopenai.Message{
 				Role: "user",
 				Content: fmt.Sprintf(
-					"explain %s in context of kubernetes. in your response make a new line every 80"+
+					"explain %s in context of orthodontics. in your response make a new line every 80"+
 						" charecters. also structure your response in a json with the following format "+
 						string(responseFormat), givenSearchTerm),
 			}

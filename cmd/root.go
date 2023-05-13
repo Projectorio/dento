@@ -10,7 +10,7 @@ import (
 
 // rootCmd represents the base command when called without any subcommands
 var rootCmd = &cobra.Command{
-	Use:   "kbuddy",
+	Use:   "dento",
 	Short: "Your Personal k8s buddy",
 	Long:  `this tool will halp you big time with your daily business working with k8s`,
 	// Uncomment the following line if your bare application
@@ -32,7 +32,7 @@ func init() {
 	// Cobra supports persistent flags, which, if defined here,
 	// will be global for your application.
 
-	// rootCmd.PersistentFlags().StringVar(&cfgFile, "config", "", "config file (default is $HOME/.kbuddy.yaml)")
+	// rootCmd.PersistentFlags().StringVar(&cfgFile, "config", "", "config file (default is $HOME/.dento.yaml)")
 
 	// Cobra also supports local flags, which will only run
 	// when this action is called directly.

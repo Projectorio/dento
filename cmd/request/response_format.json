@@ -1,9 +1,8 @@
 {
   "keyword": "The keyword to explain",
   "explanation": "the up to 1000 word explanation of the given keyword",
-  "disclaimer": "disclaimer about correctness with with a link to the kubernetes docs",
-  "exampleYaml": "the yaml definition of the resource of the given keyword if the keyword is a kubernetes resource, empty otherwise",
-  "exampleJson": "the json definition of the resource of the given keyword if the keyword is a kubernetes resource, empty otherwise",
+  "disclaimer": "disclaimer about correctness with with a link to official sources",
+  "example": "an example for the given keyword with a fake patient",
   "furtherReading": [
     {
       "keyword": "the keyword",

@@ -7,7 +7,7 @@ import (
 	"context"
 	"fmt"
 	"github.com/franciscoescher/goopenai"
-	"github.com/mattagohni/kbuddy/internal"
+	"github.com/mattagohni/dento/internal"
 	v1 "k8s.io/api/apps/v1"
 	"log"
 	"os"
